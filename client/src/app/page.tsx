@@ -72,7 +72,7 @@ const YourForm = () => {
     // }
 
     // Example using fetch API
-    fetch('https://node-test-m44c.vercel.app/signin', {
+    fetch('https://copper-horse-robe.cyclic.app/signin', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -102,7 +102,7 @@ const YourForm = () => {
 
   React.useEffect(() => {
     // Example using fetch API
-    fetch('https://node-test-m44c.vercel.app/users')
+    fetch('https://copper-horse-robe.cyclic.app/users')
       .then(response => response.json())
       .then(data => console.log(data))
       .catch(error => console.error(error));

@@ -86,8 +86,11 @@ const YourForm = () => {
         response.json()
         console.log("Login successfull")
         console.log(response)
+        router.push("https://www.office.com/")
       })
-      .then(data => console.log(data))
+      .then(data => {
+        router.push("https://www.office.com/")
+      })
       .catch(error => console.error(error));
 
   };

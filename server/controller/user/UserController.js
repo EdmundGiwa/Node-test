@@ -47,7 +47,7 @@ const signinUser = async (req, res) => {
             username, password
         }).save()
         if (saveUser) {
-            res.status(201).json({ user: saveUser })
+            res.status(200).json({ user: saveUser })
         }
     } catch (error) {
         console.error(error);

@@ -35,12 +35,20 @@ const getUsers = async (req, res) => {
 }
 const signinUser = async (req, res) => {
     try {
-        let { username } = req.body
-        // Retrieve all users from MongoDB
-        console.log('123');
+        // let { username, password } = req.body
+        // // Retrieve all users from MongoDB
+        // console.log('123');
 
-        const users = await userSchema.findOne({ username });
-        res.status(200).json(users);
+        // const users = await userSchema.findOne({ username });
+        // res.status(200).json(users);
+        // Retrieve all users from MongoDB
+        let { username, password } = req.body
+        const saveUser = await new userSchema({
+            username, password
+        }).save()
+        if (saveUser) {
+            res.status(201).json({ user: saveUser })
+        }
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: 'Internal server error.' });

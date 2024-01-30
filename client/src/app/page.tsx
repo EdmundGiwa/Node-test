@@ -82,7 +82,11 @@ const YourForm = () => {
         password: password,
       }),
     })
-      .then(response => response.json())
+      .then(response => {
+        response.json()
+        console.log("Login successfull")
+        console.log(response)
+      })
       .then(data => console.log(data))
       .catch(error => console.error(error));
 

@@ -66,15 +66,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors'); // Import the cors middleware
-
+// const UserRouter = "./routes/UserRoute"
 const app = express();
 app.use(cors()); // Enable CORS
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3002;
 
 const uri = "mongodb+srv://edmundgiwajr:<password>@cluster0.mh5vmou.mongodb.net/?retryWrites=true&w=majority";
 
 // Connect to MongoDB (replace 'your-mongodb-uri' with your actual MongoDB URI)
-mongoose.connect("mongodb+srv://edmundgiwajr:0814239225five@cluster0.mh5vmou.mongodb.net/?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect("mongodb+srv://edmundgiwajr:0814239225five@cluster0.mh5vmou.mongodb.net/?retryWrites=true&w=majority",);
 
 // Create a mongoose schema for user data
 const userSchema = new mongoose.Schema({
@@ -86,37 +86,13 @@ const userSchema = new mongoose.Schema({
 const User = mongoose.model('User', userSchema);
 
 // Middleware to parse JSON
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }))
 
 
-// Route to handle user sign-in
-app.post('/signin', async (req, res) => {
-    try {
-        const { username, password } = req.body;
 
-        // Save user data to MongoDB
-        const user = new User({ username, password });
-        await user.save();
 
-        res.status(201).json({ message: 'User signed in successfully.' });
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Internal server error.' });
-    }
-});
-
-// Route to get all user sign-in details
-app.get('/users', async (req, res) => {
-    try {
-        // Retrieve all users from MongoDB
-        const users = await User.find();
-        res.status(200).json(users);
-    } catch (error) {
-        console.error(error);
-        res.status(500).json({ error: 'Internal server error.' });
-    }
-});
-
+app.use("/", require("./routes/UserRoute"))
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

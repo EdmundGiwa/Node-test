@@ -68,21 +68,8 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Import the cors middleware
 
 const app = express();
-
-const allowedOrigins = ['https://node-test-psi-seven.vercel.app'];
-
-// Enable CORS only for the specified origins
-app.use(cors({
-    origin: function (origin, callback) {
-        if (!origin || allowedOrigins.includes(origin)) {
-            callback(null, true);
-        } else {
-            callback(new Error('Not allowed by CORS'));
-        }
-    },
-}));
-
-const PORT = process.env.PORT || 3000;
+app.use(cors()); // Enable CORS
+const PORT = process.env.PORT || 5000;
 
 const uri = "mongodb+srv://edmundgiwajr:<password>@cluster0.mh5vmou.mongodb.net/?retryWrites=true&w=majority";
 
@@ -100,7 +87,7 @@ const User = mongoose.model('User', userSchema);
 
 // Middleware to parse JSON
 app.use(bodyParser.json());
-// app.use(cors()); // Enable CORS
+
 
 // Route to handle user sign-in
 app.post('/signin', async (req, res) => {

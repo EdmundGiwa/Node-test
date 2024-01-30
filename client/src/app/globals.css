@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} */
+
+
+/* .form-container {
+  width: 300px;
+}
+
+.form-section {
+  transition: transform 0.5s ease;
+}
+
+.form-section.active {
+  transform: translateX(0);
+}
+
+.form-section.inactive {
+  transform: translateX(-100%);
+}
+
+.next-button {
+  margin-top: 10px;
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background:#f2f2f2;
+  font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+}
+
+/* .form-container {
+  width: 440px;
+  height: 338px;
+  overflow: hidden;
+}
+
+.form-section {
+  transition: transform 0.5s ease;
+}
+
+.form-section.active {
+  transform: translateX(0);
+}
+
+.form-section.inactive {
+  transform: translateX(100%);
+}
+
+.email-active {
+  background-color: #f8f8f8;
+}
+
+.password-active {
+  background-color: #fff;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.next-button,
+.back-button {
+  flex: 1;
+  margin-right: 5px;
+} 
+.form-section {
+  margin-bottom: 20px;
+}
+
+.email-section {
+  transform: translateX(0);
+}
+
+.password-section {
+  transform: translateX(-100%);
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.next-button,
+.back-button {
+  padding: 10px;
+  cursor: pointer;
+} */
+

@@ -68,7 +68,7 @@ const mongoose = require('mongoose');
 const cors = require('cors'); // Import the cors middleware
 
 const app = express();
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3000;
 
 const uri = "mongodb+srv://edmundgiwajr:<password>@cluster0.mh5vmou.mongodb.net/?retryWrites=true&w=majority";
 
